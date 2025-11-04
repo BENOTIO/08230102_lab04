@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Learning Journey</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #ffe4e1;
+            margin: 0; padding: 0; color: #333;
+        }
+        header {
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; font-size: 2.8em; }
+        header p { font-size: 1.2em; margin-top: 10px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .card { background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0px 10px 20px rgba(0,0,0,0.15); }
+        .card h3 { margin-top: 0; color: white; padding: 10px; border-radius: 8px; }
+        .card p { line-height: 1.5em; margin-top: 10px; font-size: 1em; }
+
+        .mysql { background-color: #ffb6c1; }
+        .webdev { background-color: #ff69b4; }
+        .figma { background-color: #ff9999; }
+        .photoshop { background-color: #ffc0cb; }
+
+        .btn { display: inline-block; text-decoration: none; color: white; background-color: #ff69b4;
+               padding: 12px 24px; border-radius: 8px; font-weight: bold; transition: 0.3s; margin-top: 30px; }
+        .btn:hover { background-color: #ff1493; transform: translateY(-2px); }
+
+        footer { text-align: center; margin: 60px 0 20px; color: #555; font-size: 0.9em; }
+
+        /* Navigation */
+        .navbar { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+        .navbar a { text-decoration: none; color: #ff1493; font-weight: bold; padding: 10px 20px; border-radius: 8px;
+                    background: #ffe6f0; transition: 0.3s; }
+        .navbar a:hover { background: #ffb6c1; color: white; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Learning Journey</h1>
+    <p>Documenting the key skills I acquired during this project</p>
+</header>
+
+<!-- Navigation -->
+<div class="navbar">
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'about' %}">About Me</a>
+</div>
+
+<div class="container">
+
+    <!-- Admin Screenshot -->
+    <div class="card photoshop" style="text-align:center; padding: 30px;">
+        <h3>Admin Interface</h3>
+        <p>Manage your data efficiently.</p>
+        <img src="{% static 'admin.png' %}" alt="Admin Interface" style="width:80%; border-radius:12px; margin-top:20px;">
+    </div>
+
+    <!-- Learning Journey Cards -->
+    <h2 style="color:#ff1493; margin-top:40px;">Key Learning Highlights</h2>
+    <div class="cards">
+        <div class="card mysql">
+            <h3>MySQL Database</h3>
+            <p>I learned how to integrate Django with MySQL, design database models, perform migrations, and manage data efficiently.</p>
+        </div>
+        <div class="card webdev">
+            <h3>Web Development</h3>
+            <p>I gained practical experience building full-stack web applications using Django, HTML, CSS, and templates.</p>
+        </div>
+        <div class="card figma">
+            <h3>Prototype in Figma</h3>
+            <p>I designed UI/UX prototypes in Figma to plan and visualize the web application before coding.</p>
+        </div>
+        <div class="card photoshop">
+            <h3>Adobe Photoshop</h3>
+            <p>I edited images and created graphics for the web pages using Photoshop to enhance visual appeal.</p>
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <a href="{% url 'about' %}" class="btn">View About Me Page →</a>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2025 Benita Sharma | Personal Learning Journey
+</footer>
+
+</body>
+</html>
